@@ -1,4 +1,5 @@
-django_website/cerelise-venv/
+django_website/web-venv/
+django_website/django_website/settings.py
 *.pyc
 
 .vscode
