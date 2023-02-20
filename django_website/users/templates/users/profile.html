@@ -1,5 +1,5 @@
-{% extends "main/header.html" %} 
-{% load crispy_forms_tags %} 
+{% extends "main/header.html" %} {% load crispy_forms_tags %}
+<!-- test -->
 {% block content %}
 <div
 	class="content-section col-lg-12 col-md-12 col-sm-12 tutorial-style"
@@ -9,6 +9,23 @@
 	<form method="POST" enctype="multipart/form-data">
 		{% csrf_token %}
 		<div class="media">
+			{% if user.username == form.instance.username %}
+			<input id="id_image" type="file" name="image" hidden />
+			<label for="id_image">
+				<img
+					class="rounded-circle account-img profile-image"
+					style="cursor: pointer"
+					src="{{ form.instance.image.url }}"
+					title="Upload new image"
+				/>
+			</label>
+			{% else %}
+			<img
+				class="rounded-circle account-img profile-image"
+				,
+				src="{{ form.instance.image.url }}"
+			/>
+			{% endif %}
 			<div class="media-body">
 				<h2 class="account-heading">
 					{{ form.instance.username }}
