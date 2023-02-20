@@ -7,6 +7,7 @@ class ArticleSeriesAdmin(admin.ModelAdmin):
         "title",
         "subtitle",
         "slug",
+        "author",
         # "published"
     ]
 
